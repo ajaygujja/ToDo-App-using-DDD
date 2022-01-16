@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.verygoodcore.flutter_ddd">
+    package="com.ajaygujja.flutter_ddd">
    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">
