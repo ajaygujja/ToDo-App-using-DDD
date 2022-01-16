@@ -7,7 +7,10 @@
 
 import 'package:flutter_ddd/app/app.dart';
 import 'package:flutter_ddd/bootstrap.dart';
+import 'package:flutter_ddd/injection.dart';
+import 'package:injectable/injectable.dart';
 
 void main() {
+  configureInjection(Environment.prod);
   bootstrap(() => const App());
 }
