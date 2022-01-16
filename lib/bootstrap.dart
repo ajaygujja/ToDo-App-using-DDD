@@ -9,8 +9,8 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_ddd/injection.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -31,6 +31,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await runZonedGuarded(
     () async {
       // await AppBlocObserver.runZoned(
