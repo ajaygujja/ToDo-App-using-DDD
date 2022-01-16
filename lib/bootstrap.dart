@@ -29,13 +29,15 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
+  WidgetsFlutterBinding.ensureInitialized();
 
   await runZonedGuarded(
     () async {
-      await BlocOverrides.runZoned(
-        () async => runApp(await builder()),
-        blocObserver: AppBlocObserver(),
-      );
+      // await AppBlocObserver.runZoned(
+      //   () async => runApp(await builder()),
+      //   blocObserver: AppBlocObserver(),
+      // );
+      runApp(await builder());
     },
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
