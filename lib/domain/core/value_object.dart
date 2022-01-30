@@ -30,21 +30,23 @@ abstract class ValueObject<T> {
 }
 
 class UniqueId extends ValueObject<String> {
-  const UniqueId._(this.value);
-
-  @override
-  final Either<ValueFailure<String>, String> value;
-
   factory UniqueId() {
     return UniqueId._(
-      right(const Uuid().v1())
-        );
+      right(
+        const Uuid().v1(),
+      ),
+    );
   }
 
   factory UniqueId.fromUniqueString(String? uniqueId) {
-    assert(uniqueId != null,"uniqueId can't be null");
+    assert(uniqueId != null, "uniqueId can't be null");
     return UniqueId._(
       right(uniqueId!),
     );
   }
+
+  const UniqueId._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
 }

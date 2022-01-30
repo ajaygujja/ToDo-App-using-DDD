@@ -12,5 +12,5 @@ import 'package:injectable/injectable.dart';
 
 void main() {
   configureInjection(Environment.dev);
-  bootstrap(() => const AppWidget());
+  bootstrap(() => AppWidget());
 }

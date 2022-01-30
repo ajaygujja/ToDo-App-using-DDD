@@ -8,11 +8,12 @@ environment:
 
 dependencies:
   another_flushbar: ^1.10.28
+  auto_route: 3.2.2
   bloc: 7.0.0
   dartz: ^0.10.1
   firebase_analytics: ^9.0.5
   firebase_auth: ^3.3.5
-  firebase_core: ^1.11.0
+  firebase_core: ^1.12.0
   flutter:
     sdk: flutter
   flutter_bloc: 7.1.0
@@ -25,11 +26,15 @@ dependencies:
   intl: ^0.17.0
   uuid: ^3.0.5
 
+dependency_overrides:
+  analyzer: ^3.0.0
+
 dev_dependencies:
+  auto_route_generator: 3.2.1
   build_runner: ^2.1.7
   flutter_test:
     sdk: flutter
-  freezed: ^1.1.0
+  freezed: ^1.1.1
   injectable_generator: ^1.5.3
   very_good_analysis: ^2.4.0
 
