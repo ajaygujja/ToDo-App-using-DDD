@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ddd/application/auth/auth_bloc.dart';
-import 'package:flutter_ddd/presentation/routes/router.gr.dart' as r;
+import 'package:flutter_ddd/presentation/routes/router.gr.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
             debugPrint('I am authenticated');
           },
           unauthenticated: (_) => AutoRouter.of(context).push(
-            const r.SignInRoute(),
+            SignInRoute(),
           ),
         );
       },
