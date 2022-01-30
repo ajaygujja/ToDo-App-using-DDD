@@ -24,6 +24,7 @@ dependencies:
   google_sign_in: ^5.2.3
   injectable: ^1.5.3
   intl: ^0.17.0
+  kt_dart: ^0.10.0
   uuid: ^3.0.5
 
 dependency_overrides:

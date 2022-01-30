@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
             debugPrint('I am authenticated');
           },
           unauthenticated: (_) => AutoRouter.of(context).push(
-            SignInRoute(),
+            const SignInRoute(),
           ),
         );
       },
