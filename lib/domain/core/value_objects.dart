@@ -12,6 +12,13 @@ abstract class ValueObject<T> {
 
   bool isValid() => value.isRight();
 
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
+  }
+
   T getOrCrash() {
     return value.fold((f) => throw UnexpectedValueError(f), id);
   }
@@ -32,9 +39,7 @@ abstract class ValueObject<T> {
 class UniqueId extends ValueObject<String> {
   factory UniqueId() {
     return UniqueId._(
-      right(
-        const Uuid().v1(),
-      ),
+      right(Uuid().v1()),
     );
   }
 
