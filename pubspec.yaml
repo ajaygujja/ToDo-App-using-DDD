@@ -25,6 +25,7 @@ dependencies:
   intl: ^0.17.0
   json_annotation: ^4.4.0
   kt_dart: ^0.10.0
+  rxdart: ^0.27.3
   uuid: ^3.0.5
 
 dependency_overrides:
@@ -33,11 +34,11 @@ dependency_overrides:
 dev_dependencies:
   auto_route_generator: 3.2.1
   build_runner: ^2.1.7
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
   freezed: ^1.1.1
   injectable_generator: ^1.5.3
-  flutter_lints: ^1.0.4
   json_serializable: ^6.1.4
 
 flutter:
