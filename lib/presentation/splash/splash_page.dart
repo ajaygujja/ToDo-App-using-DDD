@@ -14,7 +14,9 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) {},
           authenticated: (_) {
-            debugPrint('I am authenticated');
+            AutoRouter.of(context).push(
+              const NoteOverviewRoute(),
+            );
           },
           unauthenticated: (_) => AutoRouter.of(context).push(
             const SignInRoute(),

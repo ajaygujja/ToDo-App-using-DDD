@@ -23,6 +23,8 @@ class AppWidget extends StatelessWidget {
           primaryColor: Colors.green[800],
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Colors.blueAccent),
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: Colors.blue[900]),
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
@@ -33,7 +35,6 @@ class AppWidget extends StatelessWidget {
         // home: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
-        routeInformationProvider: _appRouter.routeInfoProvider(),
         // ),
       ),
     );
