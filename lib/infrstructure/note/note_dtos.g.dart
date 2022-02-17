@@ -9,7 +9,7 @@ part of 'note_dtos.dart';
 _$_NoteDto _$$_NoteDtoFromJson(Map<String, dynamic> json) => _$_NoteDto(
       body: json['body'] as String,
       color: json['color'] as int,
-      todos: (json['todos'] as List<TodoItem>)
+      todos: (json['todos'] as List<dynamic>)
           .map((e) => TodoItemDto.fromJson(e as Map<String, dynamic>))
           .toList(),
       serverTimeStamp: const ServerTimeStampConverter()
