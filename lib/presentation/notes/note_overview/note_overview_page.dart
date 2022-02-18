@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ddd/application/notes/note_actor/note_actor_bloc.dart';
 import 'package:flutter_ddd/application/notes/note_watcher/note_watcher_bloc.dart';
 import 'package:flutter_ddd/injection.dart';
+import 'package:flutter_ddd/presentation/notes/note_overview/widgets/notes_overview_body.dart';
 import 'package:flutter_ddd/presentation/routes/router.gr.dart';
 
 class NoteOverviewPage extends StatelessWidget {
@@ -68,6 +69,7 @@ class NoteOverviewPage extends StatelessWidget {
               IconButton(onPressed: () {}, icon: const Icon(Icons.check_box))
             ],
           ),
+          body: const NoteOverviewBody(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {},
             child: const Icon(Icons.add),
