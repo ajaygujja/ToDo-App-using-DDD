@@ -60,7 +60,7 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
 
         yield state.copyWith(
             isSaving: false,
-            showErrorMessage: true,
+            showErrorMessage: AutovalidateMode.always,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
     );
