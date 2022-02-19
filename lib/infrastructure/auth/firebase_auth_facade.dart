@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_ddd/domain/auth/auth_failure.dart';
 import 'package:flutter_ddd/domain/auth/i_auth_facade.dart';
 import 'package:flutter_ddd/domain/auth/user.dart' as user;
@@ -52,7 +51,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         password: passwordStr,
       );
       return right(unit);
-    } on PlatformException catch (e) {
+    } on FirebaseAuthException catch (e) {
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(const AuthFailure.invalidEmailAndPasswordCombination());
       } else {
@@ -78,7 +77,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       return _firebaseAuth
           .signInWithCredential(authCredential)
           .then((r) => right(unit));
-    } on PlatformException catch (_) {
+    } on FirebaseAuthException catch (_) {
       return left(const AuthFailure.serverError());
     }
   }

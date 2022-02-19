@@ -32,10 +32,8 @@ class AppWidget extends StatelessWidget {
           ),
         ),
         title: 'Notes',
-        // home: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
-        // ),
       ),
     );
   }
