@@ -17,9 +17,9 @@ import 'application/notes/note_form/note_form_bloc.dart' as _i11;
 import 'application/notes/note_watcher/note_watcher_bloc.dart' as _i12;
 import 'domain/auth/i_auth_facade.dart' as _i6;
 import 'domain/notes/i_note_repository.dart' as _i8;
-import 'infrstructure/auth/firebase_auth_facade.dart' as _i7;
-import 'infrstructure/core/firebase_injectable.dart' as _i15;
-import 'infrstructure/note/note_repository.dart'
+import 'infrastructure/auth/firebase_auth_facade.dart' as _i7;
+import 'infrastructure/core/firebase_injectable.dart' as _i15;
+import 'infrastructure/note/note_repository.dart'
     as _i9; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
