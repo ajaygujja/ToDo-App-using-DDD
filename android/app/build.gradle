@@ -82,21 +82,16 @@ android {
     }
 
     flavorDimensions "default"
-    productFlavors { 
+    productFlavors {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "Flutter Ddd"]
+            manifestPlaceholders = [appName: "ToDo"]
         }
-        staging {
-            dimension "default"
-            applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] Flutter Ddd"]
-        }        
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Flutter Ddd"]
+            manifestPlaceholders = [appName: "[DEV] ToDo"]
         }
     }
 
