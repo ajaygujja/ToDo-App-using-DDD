@@ -5,6 +5,7 @@ import 'package:flutter_ddd/application/notes/note_form/note_form_bloc.dart';
 import 'package:flutter_ddd/presentation/notes/note_form/misc/build_context_x.dart';
 import 'package:flutter_ddd/presentation/notes/note_form/misc/todo_item_presentation_classes.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:implicitly_animated_reorderable_list/implicitly_animated_reorderable_list.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:provider/provider.dart';
 
@@ -33,12 +34,24 @@ class TodoList extends StatelessWidget {
       },
       child: Consumer<FormTodos>(
         builder: (context, formTodos, child) {
-          return ListView.builder(
+          return ImplicitlyAnimatedReorderableList<TodoItemPrimitive>(
             shrinkWrap: true,
-            itemCount: formTodos.value.size,
-            itemBuilder: (context, index) {
-              return TodoTile(
-                index: index,
+            items: formTodos.value.asList(),
+            areItemsTheSame: (oldItem, newItem) => oldItem.id == newItem.id,
+            onReorderFinished: (item, from, to, newItems) {
+              context.formTodos == newItems.toImmutableList();
+              context
+                  .read<NoteFormBloc>()
+                  .add(NoteFormEvent.todosChanged(context.formTodos));
+            },
+            itemBuilder: (context, itemAnimation, item, index) {
+              return Reorderable(
+                key: ValueKey(item.id),
+                builder: (context, animation, inDrag) {
+                  return TodoTile(
+                    index: index,
+                  );
+                },
               );
             },
           );

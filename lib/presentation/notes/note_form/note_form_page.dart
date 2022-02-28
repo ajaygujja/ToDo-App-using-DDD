@@ -141,17 +141,18 @@ class NoteFormScaffold extends StatelessWidget {
               return FormTodos();
             },
             child: Form(
-                autovalidateMode: state.showErrorMessage,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: const [
-                      BodyField(),
-                      ColorField(),
-                      TodoList(),
-                      AddTodoTile(),
-                    ],
-                  ),
-                )),
+              autovalidateMode: state.showErrorMessage,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: const [
+                    BodyField(),
+                    ColorField(),
+                    TodoList(),
+                    AddTodoTile(),
+                  ],
+                ),
+              ),
+            ),
           );
         },
       ),
